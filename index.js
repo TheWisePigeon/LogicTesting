@@ -22,6 +22,16 @@ app.get('/', (req, res)=>{
         "ref" : `${hash}`
     }
     constants.totalSupply-=2000
+    if (result.ref) {
+        console.log(`User refeered by ${result.ref}`);
+        constants.users.forEach(element => {
+            if(element.name==result.ref){
+                element.balance+=500
+                constants.totalSupply-=500
+            }
+        });
+    }
+    console.log(constants.totalSupply);
     constants.users.unshift(user)
     res.send(`Post received <br/><a href="/">Go back to home</a>`)
 })
