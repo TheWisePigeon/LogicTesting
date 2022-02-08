@@ -35,13 +35,15 @@ app.get('/login', (req, res)=>{
     res.sendFile(__dirname + "/login.html")
 })
 .post('/login', (req, res)=>{
+    let pass = false
     let email = req.body.mail
     let pwd = req.body.pwd
     constants.users.forEach(element => {
         if (element.email==email && element.password==pwd) {
-            res.send("Match")
+            pass = true
         }
-    });
+    })
+    res.send(message=pass? "match":"<script>alert('Wrong credentials');</script>")
 })
 
 
