@@ -1,0 +1,13 @@
+create a constant as the total supply
+implement a basic user registration:
+    ask for mail, username and password
+    create a JSON with these keys:
+        -username
+        -mail
+        -password
+        -refLink(has to be unic)
+        -balance
+    initialize balance at 2000 and decrease the total supply automatically
+ask the user for a refLink if he has been invited
+log the user that refeered him
+increase that user's balance by 500
