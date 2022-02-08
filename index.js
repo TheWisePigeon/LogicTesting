@@ -58,6 +58,18 @@ app.get('/login', (req, res)=>{
     res.send(message=pass? "match":"<script>alert('Wrong credentials');</script>")
 })
 
+app.get('/admin', (req, res)=>{
+    constants.users.forEach(element => {
+        showUser(element)
+    });
+    res.send("Users listed")
+})
+
+
+function showUser(user) {
+    console.log(`Username:${user.name}\nMail:${user.email}\nBalance:${user.balance}\nRef:${user.ref}`);
+}
+
 
 app.listen(port, ()=>{
     console.log("App listening on port " + port);
