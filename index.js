@@ -72,5 +72,5 @@ function showUser(user) {
 
 
 app.listen(port, ()=>{
-    console.log("App listening on port " + port);
+    console.log("App listening on port " + port + " http://localhost:3000/");
 })
