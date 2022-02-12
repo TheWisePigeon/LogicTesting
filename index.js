@@ -32,7 +32,7 @@ app.get('/', (req, res)=>{
         });
     }
     console.log(constants.totalSupply);
-    constants.users.unshift(user)
+    constants.users.push(user)
     res.send(`Post received <br/><a href="/">Go back to home</a>`)
 })
 
